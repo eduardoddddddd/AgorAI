@@ -66,6 +66,36 @@ ChatALL permite enviar un prompt a varios bots a la vez, pero ahí termina la hi
 - **Brainstorming** — Rondas sucesivas de ideas que se alimentan entre sí
 - **Fact-checking cruzado** — Verificar afirmaciones pasando respuestas entre modelos
 
+
+## Integración con MCP (Model Context Protocol)
+
+ÁgorAI no se limita a orquestar conversaciones entre IAs — también conecta los modelos con **herramientas reales** a través del protocolo MCP.
+
+Esto significa que durante una sesión de orquestación, los modelos pueden:
+
+- **Ejecutar comandos** en el sistema (terminal, sistema de archivos, procesos)
+- **Consultar bases de datos** (SAP HANA, SQLite, etc.)
+- **Leer y escribir notas** en aplicaciones como Joplin
+- **Interactuar con infraestructura** (servidores, contenedores, APIs)
+
+### MCPs propios del proyecto
+
+| MCP Server | Descripción | Repo |
+|---|---|---|
+| **SAPladdin** | MCP Server para SAP Basis, Linux Admin, Windows Admin y DBAs | [Ver repo](https://github.com/eduardoddddddd/SAPladdin) |
+| **DesktopCommanderPy** | Control de terminal y sistema de archivos + admin BBDD HANA en BTP (Python) | [Ver repo](https://github.com/eduardoddddddd/DesktopCommanderPy) |
+| **DesktopCommanderMCP** | Control de terminal, búsqueda de archivos y edición diff (TypeScript) | [Ver repo](https://github.com/eduardoddddddd/DesktopCommanderMCP) |
+| **Joplin MCP** | Lectura, escritura y búsqueda de notas en Joplin | En desarrollo |
+
+### Visión
+
+La combinación de **orquestación de IAs + MCP** abre posibilidades como:
+
+- Pedir a varios modelos que analicen un sistema SAP en paralelo vía SAPladdin
+- Que un modelo genere código y otro lo ejecute y valide vía DesktopCommander
+- Documentar automáticamente el resultado de una sesión de orquestación en Joplin
+- Flujos donde las IAs no solo hablan, sino que **actúan**
+
 ## Estado del proyecto
 
 > 🚧 **En desarrollo activo** — ÁgorAI está en fase inicial de diseño y desarrollo.
@@ -79,6 +109,9 @@ ChatALL permite enviar un prompt a varios bots a la vez, pero ahí termina la hi
 - [ ] Historial de cadenas de orquestación
 - [ ] Plantillas de flujos predefinidos (debate, refinamiento, crítica)
 - [ ] Exportación de sesiones completas
+- [ ] Integración con MCP (Model Context Protocol)
+- [ ] Soporte para SAPladdin, DesktopCommander y Joplin MCP
+- [ ] Permitir que los modelos ejecuten acciones reales durante la orquestación
 
 ## Stack técnico
 
